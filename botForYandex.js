@@ -32,7 +32,7 @@ function writeKeyWord(word){
 if (document.getElementsByClassName("home-logo__default")[0] != undefined)
     writeKeyWord(keyword);
 else if (location.hostname == "yandex.ru"){
-let links = document.links;	    let flag = true;
+let flag = true;
     for (let i=0; i<links.length; i++){
         if(links[i].href.indexOf("xn----7sbab5aqcbiddtdj1e1g.xn--p1ai")!=-1){
             flag = false;

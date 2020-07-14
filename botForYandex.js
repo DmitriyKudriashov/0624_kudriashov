@@ -17,16 +17,16 @@ function getRandom(min,max){
     return Math.floor(Math.random()*(max-min)+min);
 }
 
-function writeKeyWord(word){
-    let i=0
+function writeKeyword(word){
+    let i=0;
     let timerID = setInterval(()=>{
         text.value+=word[i];
-        i++
+        i++;
         if (i==word.length){
             clearInterval(timerID);
-            searchBtn.click();
+            searchBtn.click()
         }
-    },100);
+    },100)
 }
 
 function getCookie(name) {
@@ -44,11 +44,11 @@ if (document.getElementsByClassName("home-logo__default")[0] != undefined){
     };
     let site = Object.keys(sites)[getRandom(0,Object.keys(sites).length)];
     let keywords = sites[site];
-    let keyword  = keywords[getRandom(0,keywords.length)];
+    let keyword = keywords[getRandom(0,keywords.length)];
     document.cookie = "site="+site;
     writeKeyword(keyword);
 }
-//Иначе если location.hostname == "www.google.com", то это страница с поисковой выдачей
+//Иначе если location.hostname == "www.yandex.com", то это страница с поисковой выдачей
 else if (location.hostname == "yandex.ru"){
 let flag = true;
     let site = getCookie("site");
@@ -78,3 +78,8 @@ else {
         }
     },getRandom(2000,4000));
 }
+//document.getElementsByClassName("pager__item_kind_next")[0].click()
+//document.getElementsByClassName("pager__item_current_yes")[0].textContent
+//let searchBtn = document.getElementsByClassName('mini-suggest__button')[0];
+//https://yandex.ru/
+//document.getElementsByClassName("home-logo__default")[0]
